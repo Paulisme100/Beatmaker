@@ -1,0 +1,87 @@
+.container1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header {
+    padding: 0.5em 7em 1.5em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .pageTitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
+}
+
+header .pageTitle p{
+    margin: 0 auto;
+}
+
+#drumSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.drumpad {
+    width: 60%;
+    /* height: 300px; */
+    background-color: rgb(46, 46, 46);
+    /* display: flex;
+    align-items: center;
+    justify-content: space-evenly; */
+}
+
+.drumpad p {
+    color: rgb(146, 216, 143);
+}
+
+.drumpad .effects label {
+    color: rgb(146, 216, 143);
+}
+
+[class^="pad"]{
+    margin: 0 1em;
+    background-color: rgb(53, 53, 223);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+[class^="pad"]:hover {
+    background-color: rgb(60, 60, 231);
+}
+
+canvas {
+    background-color: rgb(33, 33, 34);
+}
+
+#play i{
+    /* width: 50px;
+    height: 50px; */
+    font-size: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset i {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#play i:hover {
+    background-color: black;
+    color: white;
+}

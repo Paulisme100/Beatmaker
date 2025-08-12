@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Drum Pad</title>
+    <link rel="stylesheet" href="libraries/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="libraries/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="icon" href="data:,">
+    <script src="libraries/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container1">
+        <header>
+            <div>
+                <img src="images/drum_pixel_art.png" alt="drums pixel art" srcset="">
+            </div>
+            <div class="pageTitle">
+                <p>Beat Maker</p>
+            </div>
+            <div>
+                <input id="loadSamples" type="button" value="Load Samples" class="btn btn-primary m-2"/>
+            </div>
+        </header>
+        <canvas id="songCanvas"></canvas>
+        <div id="drumSection">
+            <div id="controls" class="p-5">
+                <div id="tempoGroup">
+                    <input id="tempoRange" type="range" min="0" max="240" value="120">
+                    <p>Tempo</p><p id="tempoValue">120</p>
+                </div>
+                <div id="playGroup">
+                    <div id="play">
+                        <i id="playIcon" class="bi bi-play"></i>
+                        <p>Press PLAY to start the song</p>
+                    </div>
+                    <div id="reset">
+                        <i id="resetIcon" class="bi bi-bootstrap-reboot"></i>
+                        <p>Write another song</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid drumpad m-4">
+                <div class="row">
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad1">
+                            <p>Kick</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad2">
+                            <p>Snare</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad3">
+                            <p>Closed Hat</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect2">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad4">
+                            <p>Clap</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad5">
+                            <p>Hi-Hat</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad6">
+                            <p>Open Hat</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad7">
+                            <p>Rim-shot</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                    <div class="col col-m-4 col-lg-3 col-xl-2 p-3">
+                        <div class="pad8">
+                            <p>Ride Cymbal</p>
+                        </div>
+                        <div class="effects">
+                            <label for="effect1">LowPass Filter</label>
+                            <input type="checkbox" name="effect1" class="lowPassFilter">
+                            <label for="effect2">HighPass Filter</label>
+                            <input type="checkbox" name="effect2" class="highPassFilter">
+                            <label for="effect3">Pan Left</label>
+                            <input type="checkbox" name="effect3" class="panLeft">
+                            <br/>
+                            <label for="effect4">Pan Right</label>
+                            <input type="checkbox" name="effect4" class="panRight">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <input id="setCtx" type="button" value="Set Audio Context" class="btn btn-primary m-2"/> -->
+        <!-- <input id="loadSamples" type="button" value="Load Samples" class="btn btn-primary m-2"/> -->
+    </div>
+</body>
+</html>
